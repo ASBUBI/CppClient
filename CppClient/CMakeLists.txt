@@ -8,10 +8,10 @@ endif()
 
 include_directories(include)
 # link_libraries(${CMAKE_CURRENT_SOURCE_DIR}/ViconDataStreamSDK_1.12_145507h/20230413_145507h/Release/Linux64/)
-find_library(VICON_LIBS NAMES ViconDataStreamSDK_CPP HINTS ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+# find_library(VICON_LIBS NAMES ViconDataStreamSDK_CPP HINTS ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
 add_executable(client src/client.cpp)
 # target_link_libraries(client PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/ViconDataStreamSDK_1.12_145507h/20230413_145507h/Release/Linux64/libViconDataStreamSDK_CPP.so) 
-target_link_libraries(client PUBLIC ${VICON_LIBS})
+target_link_libraries(client PUBLIC ViconDataStreamSDK_CPP)
 
 install(TARGETS client DESTINATION lib/${PROJECT_NAME})
