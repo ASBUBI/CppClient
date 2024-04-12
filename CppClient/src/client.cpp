@@ -86,6 +86,7 @@ int main()
                     std::cout << "Segment Name: " << segment_name << " -> Rotation: (" << rot.Rotation[0] << " ," << rot.Rotation[1] << " ," << rot.Rotation[2] << ")"<< std::endl;
                     std::chrono::milliseconds timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch());
                     std::cout << "TimeStamp (ms): " << timestamp.count() << std::endl;
+                    std::cout << "Subject name: " << subject_name << std::endl;
                     first_timestamp = first_timestamp == 0 ? timestamp.count() : first_timestamp;
                 }
             }
