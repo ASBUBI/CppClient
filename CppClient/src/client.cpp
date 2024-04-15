@@ -27,7 +27,7 @@ int main()
     //IP address of the PC hosting VICON in same network, standard port is 801
     std::string hostname = "192.168.50.56";
     ViconDataStreamSDK::CPP::Client StackClient; //client initialization
-    std::cout << "Estabilishing connection to " << hostname << " ..." << std::endl;
+    std::cout << "Establishing connection to " << hostname << " ..." << std::endl;
     StackClient.Connect(hostname);
 
     //retrying to connect if connection was unsuccessful
