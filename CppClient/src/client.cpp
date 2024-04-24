@@ -3,6 +3,7 @@
 #include <typeinfo>
 #include <csignal>
 #include <chrono>
+#include <thread>
 
 unsigned long first_timestamp = 0;
 unsigned long last_timestamp = 0;
@@ -38,7 +39,7 @@ int main()
         if(!StackClient.IsConnected().Connected)
         {
             std::cout << " failed!" << std::endl;
-            sleep(1);   
+            std::this_thread::sleep_for(std::chrono::seconds(1)); //cross-platform support for sleep function
         }
     }
 
