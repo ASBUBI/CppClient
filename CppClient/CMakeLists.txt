@@ -1,10 +1,16 @@
 cmake_minimum_required(VERSION 3.8)
-project(CppClient)
 set(CMAKE_BUILD_TYPE "Release")
+
+if (WIN32)
+  set(CMAKE_CXX_COMPILER "C:/cygnus/cygwin-b20/H-i586-cygwin32/bin/g++.exe")
+  set(CMAKE_C_COMPILER "C:/cygnus/cygwin-b20/H-i586-cygwin32/bin/gcc.exe")
+endif (WIN32)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
+
+project(CppClient)
 
 include_directories(include)
 # link_libraries(${CMAKE_CURRENT_SOURCE_DIR}/ViconDataStreamSDK_1.12_145507h/20230413_145507h/Release/Linux64/)
